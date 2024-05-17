@@ -179,6 +179,16 @@ Code that looks ugly with a line-length limit of 80-120 is a great indicator tha
 
 Please check out the SwiftLint rule [line_length](https://realm.github.io/SwiftLint/line_length.html).
 
+#### Avoid `typealias` for Netsed structs
+
+Typealiases have a bunch of advantages but for nested structs, this are the cons:
+1. When `⌘`-clicking the typealias, Xcode will take you to the alias. What you want instead is navigate to the original object.
+2. Quick-Open (`⌘ + ⇧ + o`) leads you to the typealias. You actually want the original object as suggestion. It also can happen that you end up with multiple suggestions of the same type in the quick-open dialog (one for the alias and one for the real object). 
+3. When you add the same nested object under another parent struct, specifying the same aliases would be confusing. It could even lead to name-space conflicts, depending on where you declare them. In your codebase it hides the information which struct is actually meant.
+4. When you add a typealias for each nexted struct, you would end up with tons of additional code on top of many files. 
+
+For these reasons I advise against using typealiases for nested objetcs. If you use them because of line length issues, meanwhile there are nice formatting options in Xcode that streamline indentation (`⌃ + m` in combination with SwiftFormat works perfectly).
+
 ## Xcode
 
 #### No White-Spaces In Group/Folder Names
