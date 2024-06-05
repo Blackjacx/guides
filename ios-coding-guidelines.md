@@ -59,7 +59,7 @@ For example when you have to declare a property in a specific unit like `timeInS
 
 #### Use [Camel Case](https://medium.com/better-programming/string-case-styles-camel-pascal-snake-and-kebab-case-981407998841) for acronyms like URL or HTML
 
-For names like `isHtmlValid` or `isUrlComplete` this improves readability of function and variable names (though it is different than Apple does it).
+For names like `isHtmlValid` or `isUrlComplete` this improves readability of function and variable names (though it is different than Apple does it). Also see [this](https://www.hackingwithswift.com/swift/3.0/lower-camel-case) aticle.
 
 ## Colors
 
